@@ -18,7 +18,7 @@ PENTAHO_COMPL='';
 DB_TYPE=postgresql;
 DB_PORT=5432;
 DB_HOST=localhost;
-PLUGIN_SET=cdf,cda,cde,cgg,saiku;
+PLUGIN_SET=cdf,cda,cde,cgg;
 
 ####################### INSTALAÇÃO AUTOMÁTICA DO JAVA PARA O PENTAHO
 echo "Adicionando repositorios e instalando Java";
