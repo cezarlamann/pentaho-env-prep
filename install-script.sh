@@ -1,4 +1,5 @@
 #!/bin/sh
+
 set -e
 
 echo "Adicionando variaveis de ambiente";
@@ -166,6 +167,8 @@ mv docker-pentaho/v5/pentaho/system/$DB_TYPE/repository.xml $PENTAHO_HOME/$PENTA
 mv docker-pentaho/v5/pentaho/system/$DB_TYPE/postgresql.hibernate.cfg.xml $PENTAHO_HOME/$PENTAHO_FOLDER/pentaho-solutions/system/hibernate/postgresql.hibernate.cfg.xml
 mv docker-pentaho/v5/tomcat/$DB_TYPE/context.xml $PENTAHO_HOME/$PENTAHO_FOLDER/tomcat/webapps/pentaho/META-INF/context.xml
 mv docker-pentaho/v5/tomcat/web.xml $PENTAHO_HOME/$PENTAHO_FOLDER/tomcat/webapps/pentaho/WEB-INF/web.xml
+
+wget --no-check-certificate 'https://raw.githubusercontent.com/cezarlamann/pentaho-env-prep/master/marketplace.zip' -P / -o /dev/null && unzip marketplace.zip && mv marketplace/ $PENTAHO_HOME/$PENTAHO_FOLDER/pentaho-solutions/system/
 
 chown -hR pentaho $PENTAHO_HOME/;
 chgrp -R pentaho $PENTAHO_HOME/;
